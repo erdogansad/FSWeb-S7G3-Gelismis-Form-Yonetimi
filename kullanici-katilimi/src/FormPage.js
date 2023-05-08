@@ -48,14 +48,14 @@ const FormPage = ({formSubmit}) => {
           <Col>
             <FormGroup>
               <Label for="fname">Ad</Label>
-              <Input id="fname" name="fname" placeholder="Ad" onChange={inputChange} type="text" value={formData.fname} invalid={!!formErrors.fname}/>
+              <Input id="fname" name="fname" placeholder="Ad" onChange={inputChange} type="text" value={formData.fname} invalid={!!formErrors.fname} data-test-id="isim"/>
               {formErrors.fname && <FormFeedback> {formErrors.fname} </FormFeedback>}
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
               <Label for="lname">Soyad</Label>
-              <Input id="lname" name="lname" placeholder="Soyad" onChange={inputChange} type="text" value={formData.lname} invalid={!!formErrors.lname}/>
+              <Input id="lname" name="lname" placeholder="Soyad" onChange={inputChange} type="text" value={formData.lname} invalid={!!formErrors.lname} data-test-id="soyisim"/>
               {formErrors.lname && <FormFeedback> {formErrors.lname} </FormFeedback>}
             </FormGroup>
           </Col>
@@ -64,14 +64,14 @@ const FormPage = ({formSubmit}) => {
           <Col>
             <FormGroup>
               <Label for="email">E-posta</Label>
-              <Input id="email" name="email" placeholder="E-posta" onChange={inputChange} type="email" value={formData.email} invalid={!!formErrors.email}/>
+              <Input id="email" name="email" placeholder="E-posta" onChange={inputChange} type="email" value={formData.email} invalid={!!formErrors.email} data-test-id="eposta"/>
               {formErrors.email && <FormFeedback> {formErrors.email} </FormFeedback>}
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
               <Label for="password">Şifre</Label>
-              <Input id="password" name="password" placeholder="••••••••" onChange={inputChange} type="password" value={formData.password} invalid={!!formErrors.password}/>
+              <Input id="password" name="password" placeholder="••••••••" onChange={inputChange} type="password" value={formData.password} invalid={!!formErrors.password} data-test-id="sifre"/>
               {formErrors.password && <FormFeedback> {formErrors.password} </FormFeedback>}
             </FormGroup>
           </Col>
@@ -79,7 +79,7 @@ const FormPage = ({formSubmit}) => {
         <Row>
           <Col>
             <FormGroup check>
-              <Input id="tos" name="tos" type="checkbox" onChange={inputChange} value={formData.tos} invalid={!!formErrors.tos}/>
+              <Input id="tos" name="tos" type="checkbox" onChange={inputChange} value={formData.tos} invalid={!!formErrors.tos} data-test-id="tos"/>
               {' '}
               <Label check>Kullanım Şartları'nı kabul ediyorum.</Label>
               {formErrors.tos && <FormFeedback> {formErrors.tos} </FormFeedback>}
@@ -87,7 +87,7 @@ const FormPage = ({formSubmit}) => {
           </Col>
         </Row>
         <Row className='pt-3'>
-          {isSubmitted && <p className='text-success text-center'> Kullanıcı kaydedildi. </p>}
+          {isSubmitted && <p className='text-success text-center' data-test-id="successText"> Kullanıcı kaydedildi. </p>}
           <Col className='text-center'><Button type="submit" disabled={!formIsValid} color='success'>Gönder</Button></Col>
         </Row>
       </Form>
